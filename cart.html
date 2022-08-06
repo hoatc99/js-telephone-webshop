@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+    
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+
+    <nav id="nav-bar"></nav>
+    <div id="cart"></div>
+    <div id="customerInfo">
+        <form action="">
+            <h1 class="customer-info-title">Thông tin mua hàng</h1>
+            <div class="customer-info-item">
+                <label for="customerName">Nhập họ tên *</label>
+                <input type="text" id="customerName" required>
+            </div>
+            <div class="customer-info-item">
+                <label for="customerPhone">Nhập số điện thoại *</label>
+                <input type="text" id="customerPhone" required>
+            </div>
+            <div class="customer-info-item">
+                <label for="customerAddress">Nhập địa chỉ giao hàng *</label>
+                <input type="text" id="customerAddress" required>
+            </div>
+            <div class="customer-info-item">
+                <label for="customerPromote">Nhập mã giảm giá (nếu có)</label>
+                <input type="text" id="customerPromote">
+            </div>
+            <p>(*): Bắt buộc</p>
+            <button class="btn btn-primary" onclick="customerSubmitOrder();">Đặt hàng</button>
+        </form>
+    </div>
+    <footer id="footer"></footer>
+
+    <!-- Javascript -->
+    <script src="scripts.js"></script>
+    <script>
+        loadNavBar();
+        loadFooter();
+        showCart();
+        removeFromCart = (id) => {
+            removeProductFromCart(id);
+        };
+        updateCart = (id) => {
+            updateProductInCart(id);
+        }
+        customerSubmitOrder = () => {
+            submitOrder();
+        }
+    </script>
+
+</body>
+</html>

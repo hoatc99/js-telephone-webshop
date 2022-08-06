@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính bảng</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+</head>
+<body>
+
+    <nav id="nav-bar"></nav>
+    <section id="filter">
+        <div id="filter-items">
+            <button onclick="loadProductByType('tablet')"><p>Xem tất cả</p></button>
+            <button onclick="loadProductByBrand('tablet','ipad')"><img src="https://cdn.tgdd.vn/Brand/1/iPad-(Apple)522-b_4.jpg"></button>
+            <button onclick="loadProductByBrand('tablet','samsung')"><img src="https://cdn.tgdd.vn/Brand/1/samsungnew-220x48-1.png"></button>
+        </div>
+    </section>
+    <section id="products">
+        <div id="items"></div>
+    </section>
+    <footer id="footer"></footer>
+
+    <!-- Javascript -->
+    <script src="scripts.js"></script>
+    <script>
+        loadNavBar();
+        loadFooter();
+        loadProductByType('tablet');
+        addToCart = (id) => {
+            addProductToCart(id);
+        };
+    </script>
+    
+</body>
+</html>

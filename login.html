@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Đăng ký</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+</head>
+<body>
+    
+    <nav id="nav-bar"></nav>
+    <section id="customerLogin">
+        <form action="" id="login">
+            <h1 class="customer-login-title">Đăng nhập</h1>
+            <div class="customer-login-item">
+                <label for="customerID">Tên đăng nhập *</label>
+                <input type="text" id="customerID" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="customerPassword">Mật khẩu *</label>
+                <input type="password" id="customerPassword" required>
+            </div>
+            <p>(*): Bắt buộc</p>
+            <a class="btn btn-primary" href="javascript:void(0);" onclick="customerLogin(customerID.value, customerPassword.value);">Đăng nhập</a>
+            <a onclick="loginFormSwitchRegister()">Bạn chưa có tài khoản? Vui lòng đăng ký</a>
+            <a onclick="loginFormSwitchPasswordRetrieval()">Bạn quên mật khẩu? Vui lòng lấy lại mật khẩu</a>
+        </form>
+        <form action="" id="register" hidden>
+            <h1 class="customer-login-title">Đăng ký tài khoản</h1>
+            <div class="customer-login-item">
+                <label for="customerID">Tên đăng nhập *</label>
+                <input type="text" id="customerID" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="customerPassword">Mật khẩu *</label>
+                <input type="password" id="customerPassword" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="customerRepassword">Xác nhận mật khẩu *</label>
+                <input type="password" id="customerRepassword" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="customerName">Họ và tên *</label>
+                <input type="password" id="customerName" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="customerPhone">Số điện thoại *</label>
+                <input type="tel" id="customerPhone" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="gender">Giới tính</label>
+                <input type="radio" name="gender" id="customerGenderMan" value="man" checked>Nam
+                <input type="radio" name="gender" id="customerGenderWoman" value="woman">Nữ
+            </div>
+            <div class="customer-login-item">
+                <label for="customerRepassword">Ngày sinh</label>
+                <input type="date" id="customerRepassword">
+            </div>
+            <div class="customer-login-item">
+                <label for="customerRepassword">Địa chỉ</label>
+                <input type="text" id="customerRepassword">
+            </div>
+            <div class="customer-login-item">
+                <label for="customerRepassword">Email</label>
+                <input type="email" id="customerRepassword">
+            </div>
+            <p>(*): Bắt buộc</p>
+            <button class="btn btn-primary" onclick="customerRegister(customerID, customerPassword, customerRepassword);">Đăng ký</button>
+            <a onclick="loginFormSwitchLogin()">Bạn đã có tài khoản? Vui lòng đăng nhập</a>
+        </form>
+        <form action="" id="passwordRetrieval" hidden>
+            <h1 class="customer-login-title">Lấy lại mật khẩu</h1>
+            <div class="customer-login-item">
+                <label for="customerID">Tên đăng nhập *</label>
+                <input type="text" id="customerID" required>
+            </div>
+            <div class="customer-login-item">
+                <label for="customerPhone">Số điện thoại đăng ký *</label>
+                <input type="tel" id="customerPhone" required>
+            </div>
+            <button class="btn btn-primary" onclick="sendCaptcha(customerPhone);">Gửi mã xác thực</button>
+            <div class="customer-login-item">
+                <label for="customerCapcha">Nhập mã xác thực *</label>
+                <input type="text" id="customerCaptcha" required>
+            </div>
+            <p>(*): Bắt buộc</p>
+            <button class="btn btn-primary" onclick="customerLogin(customerID, customerPassword);">Xác nhận</button>
+            <a onclick="loginFormSwitchLogin()">Bạn đã có tài khoản? Vui lòng đăng nhập</a>
+            <a onclick="loginFormSwitchRegister()">Bạn chưa có tài khoản? Vui lòng đăng ký</a>
+        </form>
+    </section>
+    <footer id="footer"></footer>
+
+    <!-- Javascript -->
+    <script src="scripts.js"></script>
+    <script>
+        loadNavBar();
+        loadFooter();
+        customerLogin = (customerID, customerPassword) => {
+            checkLogin(customerID, customerPassword);
+        }
+    </script>
+</body>
+</html>

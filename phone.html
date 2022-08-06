@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện thoại thông minh</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+
+    <nav id="nav-bar"></nav>
+    <section id="filter">
+        <div id="filter-items">
+            <button onclick="loadProductByType('phone')"><p>Xem tất cả</p></button>
+            <button onclick="loadProductByBrand('phone','iphone')"><img src="https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png"></button>
+            <button onclick="loadProductByBrand('phone','samsung')"><img src="https://cdn.tgdd.vn/Brand/1/samsungnew-220x48-1.png"></button>
+            <button onclick="loadProductByBrand('phone','oppo')"><img src="https://cdn.tgdd.vn/Brand/1/OPPO42-b_5.jpg"></button>
+            <button onclick="loadProductByBrand('phone','vivo')"><img src="https://cdn.tgdd.vn/Brand/1/Vivo42-b_50.jpg"></button>
+            <button onclick="loadProductByBrand('phone','xiaomi')"><img src="https://cdn.tgdd.vn/Brand/1/logo-xiaomi-220x48-5.png"></button>
+        </div>
+    </section>
+    <section id="products">
+        <div id="items"></div>
+    </section>
+    <footer id="footer"></footer>
+
+    <!-- Javascript -->
+    <script src="scripts.js"></script>
+    <script>
+        loadNavBar();
+        loadFooter();
+        loadProductByType('phone');
+        addToCart = (id) => {
+            addProductToCart(id);
+        };
+        openProductSpecification = (id) => {
+            productSpecification(id);
+        };
+    </script>
+    
+</body>
+</html>

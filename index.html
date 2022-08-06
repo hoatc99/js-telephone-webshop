@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css">
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <style>
+        #indexText {
+            position: relative;
+            left: 0;
+            text-align: center;
+            animation: fromLeftToRight 3s linear forwards;
+        }
+        #indexBrand {
+            position: relative;
+            text-align: center;
+            top: 0;
+            animation: fromBottomToTop 3s linear forwards;
+        }
+        #indexText span {
+            position: relative;
+            left: 0;
+            text-align: center;
+            animation: fromRightToLeft 3s linear forwards;
+        }
+        @keyframes fromLeftToRight {
+            0% {
+                left: -70%;
+            }
+        }
+        @keyframes fromRightToLeft {
+            0% {
+                left: 140%;
+            }
+        }
+        @keyframes fromBottomToTop {
+            0% {
+                top: 70px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav id="nav-bar"></nav>
+    <section id="slider" style="overflow: hidden;">
+        <img src="https://previews.123rf.com/images/maxborovkov/maxborovkov1705/maxborovkov170500303/79273072-welcome-banner-with-shiny-colorful-confetti-vector-paper-illustration-.jpg">
+        <p id="indexText" style="color: var(--primary-color); font-family: 'Bangers', cursive; font-size: 30px;">Chào mừng
+            <span style="color: var(--primary-color); font-family: 'Bangers', cursive; font-size: 30px;">bạn đến với</span>
+        </p>
+        <p id="indexBrand" style="color: var(--primary-color); font-family: 'Bangers', cursive; font-size: 50px;">Homeclick</p>
+    </section>
+    <footer id="footer"></footer>
+    
+    <!-- Javascript -->
+    <script src="scripts.js"></script>
+    <script>
+        loadNavBar();
+        loadFooter();
+    </script>
+</body>
+</html>
